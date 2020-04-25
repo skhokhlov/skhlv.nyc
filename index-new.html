@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Sergey Khokhlov</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet"/>
+    <style>
+        .page {
+            font-family: Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
+            text-rendering: optimizeLegibility;
+            margin: 0;
+            color: #222;
+        }
+
+        .wrapper_viewport {
+            height: 90vh;
+        }
+
+        .centered {
+            text-align: center;
+            position: relative;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .title {
+            font-size: 4em;
+            font-weight: 700;
+            transition-timing-function: ease-out;
+            transition-duration: 1s;
+            opacity: 0;
+        }
+
+        .title_on {
+            opacity: 1;
+        }
+
+        .section {
+            /*min-height: 100vh;*/
+            font-size: 3.3em;
+        }
+
+        .link {
+            color: #003BD9;
+            text-decoration: none;
+        }
+
+        .paragraph {
+            /*font-size: 53px;*/
+            font-size: 3.3em;
+            /*letter-spacing: 4px;*/
+            letter-spacing: .07em;
+            /*line-height: 85px;*/
+            line-height: 1.6em;
+            font-weight: 600;
+        }
+
+        .sentence {
+            padding-right: 1.3em;
+        }
+
+        .footer {
+            font-size: 3.3em;
+        }
+
+
+        @media screen and (max-width: 800px) {
+            .page {
+                font-size: .8em;
+            }
+        }
+
+        @media screen and (max-width: 550px) {
+            .page {
+                font-size: .5em;
+            }
+        }
+    </style>
+</head>
+<body class="page">
+<header class="wrapper_viewport">
+    <header class="centered">
+        <h1 class="title">+skhokhlov</h1>
+    </header>
+</header>
+<article>
+    <section class="section paragraph">
+        <span class="sentence">Analyst at <a href="https://smartdec.net" class="link">SmartDec</a></span>
+        <span class="sentence">Artist on <a href="https://ello.co/skhokhlov" class="link">Ello</a></span>
+        <span class="sentence">Connection on <a href="https://www.linkedin.com/in/skhokhlov/" class="link">LinkedIn</a></span>
+        <span class="sentence">Programmer on <a href="https://github.com/skhokhlov" class="link">GitHub</a></span>
+        <span class="sentence">Receiver on <a href="mailto:me@skhlv.nyc" class="link">me@skhlv.nyc</a></span>
+    </section>
+</article>
+<footer class="wrapper_viewport footer">
+    <p class="centered"><span class="name">Sergey Khokhlov</span> since 1997</p>
+</footer>
+<script>
+    window.onload = function () {
+        document.getElementsByClassName("title")[0].classList.add("title_on")
+    }
+</script>
+<noscript>
+    <style>
+        .title {
+            opacity: 1;
+        }
+    </style>
+</noscript>
+</body>
+</html>

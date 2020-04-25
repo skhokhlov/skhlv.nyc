@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Motion Picture + Sergey Khokhlov</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet"/>
+    <style>
+        .page {
+            font-family: Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
+            text-rendering: optimizeLegibility;
+            margin: 0;
+            color: #d7d7d7;
+            background: #0f0f0f;
+        }
+        .centered {
+            text-align: center;
+        }
+        .title {
+            font-size: 4em;
+            font-weight: 700;
+            transition-timing-function: ease-out;
+            transition-duration: 1s;
+            opacity: 0;
+        }
+        .title_on {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="page">
+<div class="header">
+    <h1 class="title">+skhokhlov</h1>
+</div>
+<script>
+    window.onload = function(){
+        document.getElementsByClassName("title")[0].classList.add("title_on")
+    }
+</script>
+<noscript>
+    <style>
+        .title {
+            opacity: 1;
+        }
+    </style>
+</noscript>
+</body>
+</html>

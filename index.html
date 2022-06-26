@@ -9,13 +9,13 @@
             font-family: Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
             text-rendering: optimizeLegibility;
             margin: 0;
-            /*color: #1C1C1C;*/
-            color: #222;
+            color: #fff;
             width: 100%;
             transition-duration: 1.9s;
             background-size: auto;
             background-repeat: no-repeat;
             background-position: center; 
+            background-color: #151515;
         }
         .link {
             color: #003BD9;
@@ -71,6 +71,7 @@
                 el.innerHTML += `<img src="assets/image_${i}.jpg" style="display: none"/>`
             }
             var i = 0;
+            await sleep(1000);
             while(true) {
                 await sleep(2000);
                 i += Math.round(Math.random()*numberOfImages);

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <title>Sergey Khokhlov</title>
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,700" rel="stylesheet"/>
     <style>
         .page {
             font-family: Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -12,47 +11,41 @@
             margin: 0;
             /*color: #1C1C1C;*/
             color: #222;
+            width: 100%;
+            transition-duration: 1.9s;
+            background-size: auto;
+            background-repeat: no-repeat;
+            background-position: center; 
         }
         .link {
             color: #003BD9;
             text-decoration: none;
         }
-        .paragraph {
-            /*font-size: 53px;*/
-            font-size: 3.3em;
-            /*letter-spacing: 4px;*/
-            letter-spacing: .07em;
-            /*line-height: 85px;*/
-            line-height: 1.6em;
-            font-weight: 600;
-        }
-        .sentence {
-            padding-right: 1.3em;
-        }
-        .footer {
-            /*font-size: 53px;*/
-            /*font-size: 3.3em;*/
-        }
-        .name {
-            display: inline-block;
-            font: inherit;
-        }
         .title {
-            /*font-size: 100px;*/
-            font-size: 6.25em;
+            font-size: 27vh;
             font-weight: 700;
+            /* letter-spacing: .04em; */
+            color: #fff;
         }
+
 
         @media screen and (max-width:800px) {
             .page {
                 font-size: .7em;
             }
+            .title {
+                font-size: 35vw;
+                margin: 0;
+                writing-mode: vertical-rl;
+                text-orientation: mixed;
+                transform: rotate(-180deg);
+            }
         }
-        @media screen and (max-width:550px) {
+        /* @media screen and (max-width:550px) {
             .page {
                 font-size: .45em;
             }
-        }
+        } */
     </style>
     <meta name="keywords" content="sergey khokhlov, sergey, khokhlov, skhokhlov, business card, visiting card, sergeykhokhlov, sergeyakhokhlov, personal">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-50638713-4"></script>
@@ -64,17 +57,28 @@
         gtag('config', 'UA-50638713-4');
     </script>
 </head>
-<body class="page">
-<h1 class="title">+skhokhlov</h1>
-<article class="paragraph">
-    <span class="sentence">Analyst at <a href="https://smartdec.net" class="link">SmartDec</a></span>
-    <!--<span class="sentence">Teacher at <a href="https://english.mirea.ru" class="link">MIREA</a></span>-->
-    <span class="sentence">Programmer on <a href="https://github.com/skhokhlov" class="link">GitHub</a></span>
-    <span class="sentence">Artist on <a href="https://ello.co/skhokhlov" class="link">Ello</a></span>
-    <span class="sentence">Photographer on <a href="https://flickr.com/skhokhlov" class="link">Flickr</a></span>
-    <span class="sentence">Connection on <a href="https://www.linkedin.com/in/skhokhlov/" class="link">LinkedIn</a></span>
-    <span class="sentence">Receiver on <a href="mailto:me@skhlv.nyc" class="link">me@skhlv.nyc</a></span>
-    <div class="footer"><h2 class="name">Sergey Khokhlov</h2> since 1997</div>
+<body class="page" style="background-image: url('assets/image_0.jpg')">
+<h1 class="title">Sergey <br/>Khokhlov</h1>
 </article>
+<script>
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        (async () => {
+            var el = document.getElementsByClassName('page')[0]
+            var numberOfImages = 11;
+            for (var i = 0; i < numberOfImages; i++) {
+                el.innerHTML += `<img src="assets/image_${i}.jpg" style="display: none"/>`
+            }
+            var i = 0;
+            while(true) {
+                await sleep(2000);
+                i += Math.round(Math.random()*numberOfImages);
+                var image = i%numberOfImages;
+                console.log(image)
+                el.style = `background-image: url('assets/image_${image}.jpg')`; 
+            }
+        })();
+</script>
 </body>
 </html>
